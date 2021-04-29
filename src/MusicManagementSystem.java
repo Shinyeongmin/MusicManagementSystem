@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class MusicManagementSystem 
 {
-
     public static void main(String[] args)
     {
         Scanner input = new Scanner(System.in);
@@ -32,15 +31,12 @@ public class MusicManagementSystem
             	mms.editMusic();
             	break;
             case 4 :
-            	mms.viewMusic();
+            	mms.viewMusics();
             	break;
             case 5 :
             	mms.exit();
-            	break;
-            	
+            	break;         	
             }
-            
-        }
-        
+        }     
     }
 }
