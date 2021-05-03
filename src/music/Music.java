@@ -15,13 +15,27 @@ public class Music
 		
 	}
 	
+	public Music(MusicGenre genre) 
+	{
+		this.genre = genre;
+	}
+	
 	public Music(int num)
 	{
 		this.num = num;
 	}
 	
 	public Music(int num, String title, String singer, String album)
+	{
+		this.num = num;
+		this.title = title;
+		this.singer = singer;
+		this.album = album;
+	}
+	
+	public Music(MusicGenre genre, int num, String title, String singer, String album)
 	{	
+		this.genre = genre;
 		this.num = num;
 		this.title = title;
 		this.singer = singer;
@@ -67,10 +81,27 @@ public class Music
 	public void setAlbum(String album) {
 		this.album = album;
 	}
-	
 	public void printInfo()
 	{
-		System.out.print("번호:"+num);
+		String ngenre = "none";
+	    switch (this.genre)
+	    {
+	    case PopSong:
+	    	ngenre = "PopSong";
+	    	break;
+	    case Rock:
+	    	ngenre = "Rock";
+	    	break;
+	    case HipHop:
+	    	ngenre = "HipHop";
+	    	break;
+	    case Ballade:
+	    	ngenre = "ballade";
+	    	break;
+	    default:
+	    }
+	    System.out.print("장르:"+ngenre);
+		System.out.print(" 번호:"+num);
 		System.out.print(" 제목:"+title);
 		System.out.print(" 가수:"+singer);
 		System.out.println(" 앨범:"+album);
@@ -94,14 +125,3 @@ public class Music
     	this.setAlbum(album);
 	}
 }
-
-
-
-
-
-
-
-
-
-
-

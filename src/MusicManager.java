@@ -1,8 +1,10 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import music.Ballade;
 import music.HipHop;
 import music.Music;
+import music.MusicGenre;
 import music.PopSong;
 import music.Rock;
 
@@ -31,7 +33,7 @@ public class MusicManager
 	    	
 	    	if (genre == 1)
 	    	{
-	    		music = new Music();
+	    		music = new Ballade(MusicGenre.Ballade);
 	    		music.getUserInput(input);
 	    		musics.add(music);
 	    		music.printInfo();
@@ -40,7 +42,7 @@ public class MusicManager
 	    	}
 	    	else if (genre == 2)
 	    	{
-	    		music = new PopSong();
+	    		music = new PopSong(MusicGenre.PopSong);
 	    		music.getUserInput(input);
 	    		musics.add(music);
 	    		music.printInfo();
@@ -49,7 +51,7 @@ public class MusicManager
 	    	}
 	    	else if (genre == 3)
 	    	{
-	    		music = new Rock();
+	    		music = new Rock(MusicGenre.Rock);
 	    		music.getUserInput(input);
 	    		musics.add(music);
 	    		music.printInfo();
@@ -58,7 +60,7 @@ public class MusicManager
 	    	}
 	    	else if (genre == 4)
 	    	{
-	    		music = new HipHop();
+	    		music = new HipHop(MusicGenre.HipHop);
 	    		music.getUserInput(input);
 	    		musics.add(music);
 	    		music.printInfo();

@@ -4,6 +4,11 @@ import java.util.Scanner;
 
 public class HipHop extends Music 
 {
+	public HipHop(MusicGenre genre) 
+	{
+		super(genre);
+	}
+	
 	public void getUserInput(Scanner input)
 	{
 		System.out.print("¹øÈ£ : ");

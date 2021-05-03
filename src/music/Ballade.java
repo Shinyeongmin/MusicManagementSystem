@@ -2,9 +2,9 @@ package music;
 
 import java.util.Scanner;
 
-public class PopSong extends Music 
+public class Ballade extends Music 
 {
-	public PopSong(MusicGenre genre) 
+	public Ballade(MusicGenre genre) 
 	{
 		super(genre);
 	}
