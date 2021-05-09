@@ -5,12 +5,13 @@ import music.Ballade;
 import music.HipHop;
 import music.Music;
 import music.MusicGenre;
+import music.MusicInput;
 import music.PopSong;
 import music.Rock;
 
 public class MusicManager 
 {
-	ArrayList<Music> musics = new ArrayList<Music>();
+	ArrayList<MusicInput> musics = new ArrayList<MusicInput>();
 	Scanner input;
 	
 	MusicManager(Scanner input)
@@ -21,7 +22,7 @@ public class MusicManager
     public void addMusic()
 	{
     	int genre = 0;
-    	Music music;
+    	MusicInput musicInput;
     	while (genre !=1 && genre!=2)
     	{
 	    	System.out.println("장르를 선택하세요");
@@ -33,37 +34,37 @@ public class MusicManager
 	    	
 	    	if (genre == 1)
 	    	{
-	    		music = new Ballade(MusicGenre.Ballade);
-	    		music.getUserInput(input);
-	    		musics.add(music);
-	    		music.printInfo();
+	    		musicInput = new Ballade(MusicGenre.Ballade);
+	    		musicInput.getUserInput(input);
+	    		musics.add(musicInput);
+	    		musicInput.printInfo();
 	    		System.out.println();
 	    		break;
 	    	}
 	    	else if (genre == 2)
 	    	{
-	    		music = new PopSong(MusicGenre.PopSong);
-	    		music.getUserInput(input);
-	    		musics.add(music);
-	    		music.printInfo();
+	    		musicInput = new PopSong(MusicGenre.PopSong);
+	    		musicInput.getUserInput(input);
+	    		musics.add(musicInput);
+	    		musicInput.printInfo();
 	    		System.out.println();
 	    		break;
 	    	}
 	    	else if (genre == 3)
 	    	{
-	    		music = new Rock(MusicGenre.Rock);
-	    		music.getUserInput(input);
-	    		musics.add(music);
-	    		music.printInfo();
+	    		musicInput = new Rock(MusicGenre.Rock);
+	    		musicInput.getUserInput(input);
+	    		musics.add(musicInput);
+	    		musicInput.printInfo();
 	    		System.out.println();
 	    		break;
 	    	}
 	    	else if (genre == 4)
 	    	{
-	    		music = new HipHop(MusicGenre.HipHop);
-	    		music.getUserInput(input);
-	    		musics.add(music);
-	    		music.printInfo();
+	    		musicInput = new HipHop(MusicGenre.HipHop);
+	    		musicInput.getUserInput(input);
+	    		musics.add(musicInput);
+	    		musicInput.printInfo();
 	    		System.out.println();
 	    		break;
 	    	}
@@ -102,10 +103,10 @@ public class MusicManager
 		int musicNum = input.nextInt();
 		for (int i=0; i<musics.size(); i++)
 		{
-			Music music = musics.get(i);
-			if (music.getNum() == musicNum)
+			MusicInput musicInput = musics.get(i);
+			if (musicInput.getNum() == musicNum)
 			{
-				music.printInfo();
+				musicInput.printInfo();
 				int j = -1;
 				while (j != 5)
 				{
@@ -120,25 +121,25 @@ public class MusicManager
 		            {
 		            	System.out.print("노래 번호 : ");
 		            	int num = input.nextInt();
-		            	music.setNum(num);
+		            	musicInput.setNum(num);
 		            }
 		            else if (j == 2)
 		            {
 		            	System.out.print("노래 제목 : ");
 		            	String title = input.next();
-		            	music.setTitle(title);
+		            	musicInput.setTitle(title);
 		            }
 		            else if (j == 3)
 		            {
 		            	System.out.print("가수 : ");
 		            	String singer = input.next();
-		            	music.setSinger(singer);
+		            	musicInput.setSinger(singer);
 		            }
 		            else if (j == 4)
 		            {
 		            	System.out.print("앨범 : ");
 		            	String album = input.next();
-		            	music.setAlbum(album);
+		            	musicInput.setAlbum(album);
 		            }
 		            else
 		            {

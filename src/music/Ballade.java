@@ -2,7 +2,7 @@ package music;
 
 import java.util.Scanner;
 
-public class Ballade extends Music 
+public class Ballade extends Music implements MusicInput
 {
 	public Ballade(MusicGenre genre) 
 	{
@@ -26,5 +26,31 @@ public class Ballade extends Music
     	System.out.print("앨범 : ");
     	String album = input.next();
     	this.setAlbum(album);
+	}
+	
+	public void printInfo()
+	{
+		String ngenre = "none";
+	    switch (this.genre)
+	    {
+	    case PopSong:
+	    	ngenre = "PopSong";
+	    	break;
+	    case Rock:
+	    	ngenre = "Rock";
+	    	break;
+	    case HipHop:
+	    	ngenre = "HipHop";
+	    	break;
+	    case Ballade:
+	    	ngenre = "ballade";
+	    	break;
+	    default:
+	    }
+	    System.out.print("장르:"+ngenre);
+		System.out.print(" 번호:"+num);
+		System.out.print(" 제목:"+title);
+		System.out.print(" 가수:"+singer);
+		System.out.println(" 앨범:"+album);
 	}
 }
