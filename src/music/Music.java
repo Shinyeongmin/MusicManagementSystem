@@ -2,7 +2,7 @@ package music;
 
 import java.util.Scanner;
 
-public abstract class Music 
+public abstract class Music implements MusicInput
 {
 	protected MusicGenre genre = MusicGenre.Ballade;
 	protected int num;
@@ -82,4 +82,29 @@ public abstract class Music
 		this.album = album;
 	}
 	public abstract void printInfo();
+	
+	public void setMusicNum(Scanner input)
+	{
+		System.out.print("노래 번호 : ");
+    	int num = input.nextInt();
+    	this.setNum(num);
+	}
+	public void setMusicTitle(Scanner input)
+	{
+    	System.out.print("노래 제목 : ");
+    	String title = input.next();
+    	this.setTitle(title);
+	}
+	public void setMusicSinger(Scanner input)
+	{
+		System.out.print("가수 : ");
+    	String singer = input.next();
+    	this.setSinger(singer);
+	}
+	public void setMusicAlbum(Scanner input)
+	{
+		System.out.print("앨범 : ");
+    	String album = input.next();
+    	this.setAlbum(album);
+	}
 }

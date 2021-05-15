@@ -17,4 +17,12 @@ public interface MusicInput
 	public void printInfo();
 	
 	public void getUserInput(Scanner input);
+	
+	public void setMusicNum(Scanner input);
+	
+	public void setMusicTitle(Scanner input);
+	
+	public void setMusicSinger(Scanner input);
+	
+	public void setMusicAlbum(Scanner input);
 }
