@@ -1,0 +1,2 @@
+5월 19, 2021 4:17:30 오후 log.EventLogger log
+정보: view a list of music

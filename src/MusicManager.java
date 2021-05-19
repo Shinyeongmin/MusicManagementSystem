@@ -1,19 +1,24 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import music.Ballade;
 import music.HipHop;
-import music.Music;
 import music.MusicGenre;
 import music.MusicInput;
 import music.PopSong;
 import music.Rock;
 
-public class MusicManager 
+public class MusicManager implements Serializable
 {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5437755636628284253L;
+	
 	ArrayList<MusicInput> musics = new ArrayList<MusicInput>();
-	Scanner input;
+	transient Scanner input;
 	
 	MusicManager(Scanner input)
 	{
@@ -40,7 +45,6 @@ public class MusicManager
 		    		musicInput.getUserInput(input);
 		    		musics.add(musicInput);
 		    		musicInput.printInfo();
-		    		System.out.println();
 		    		break;
 		    	}
 		    	else if (genre == 2)
@@ -165,12 +169,6 @@ public class MusicManager
 			musics.get(i).printInfo();
 		}
 	}
-	
-	public static void exit()
-	{
-		System.out.println();
-	}
-	
 	public void showEditMenu()
 	{
 		System.out.println("수정할 항목을 선택하세요");

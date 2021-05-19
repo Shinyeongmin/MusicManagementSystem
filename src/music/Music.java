@@ -1,9 +1,15 @@
 package music;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
-public abstract class Music implements MusicInput
+public abstract class Music implements MusicInput, Serializable
 {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5886718606629387946L;
+	
 	protected MusicGenre genre = MusicGenre.Ballade;
 	protected int num;
 	protected String title;
