@@ -8,9 +8,15 @@ public interface MusicInput
 	
 	public void setNum(int num);
 	
+	public String getTitle();
+	
 	public void setTitle(String title);
 	
+	public String getSinger();
+	
 	public void setSinger(String singer);
+	
+	public String getAlbum();
 	
 	public void setAlbum(String album);
 	

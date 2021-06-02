@@ -7,10 +7,14 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
-public class MusicAdder extends JFrame
+public class MusicAdder extends JPanel
 {
-	public MusicAdder()
+	WindowFrame f;
+	
+	public MusicAdder(WindowFrame f)
 	{
+		this.f = f;
+		
 		JPanel p = new JPanel(new SpringLayout());
 		
 		JLabel labelNum = new JLabel("Num: ", JLabel.TRAILING);
@@ -42,10 +46,6 @@ public class MusicAdder extends JFrame
 		
 		SpringUtilities.makeCompactGrid(p, 5, 2, 6, 6, 6, 6);
 		
-		this.setSize(300, 300);
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		this.setContentPane(p);
-		this.setVisible(true);
+		this.add(p);
 	}
 }
