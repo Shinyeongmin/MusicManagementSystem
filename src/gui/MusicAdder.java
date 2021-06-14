@@ -7,13 +7,19 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
+import listener.MusicAddCancelListener;
+import listener.MusicAdderListener;
+import manager.MusicManager;
+
 public class MusicAdder extends JPanel
 {
 	WindowFrame f;
+	MusicManager mm;
 	
-	public MusicAdder(WindowFrame f)
+	public MusicAdder(WindowFrame f,  MusicManager mm)
 	{
 		this.f = f;
+		this.mm = mm;
 		
 		JPanel p = new JPanel(new SpringLayout());
 		
@@ -38,11 +44,18 @@ public class MusicAdder extends JPanel
 		JLabel labelAlbum = new JLabel("Album: ", JLabel.TRAILING);
 		JTextField fieldAlbum = new JTextField(10);
 		labelAlbum.setLabelFor(fieldAlbum);
+		
+		JButton saveButton = new JButton("save");
+		saveButton.addActionListener(new MusicAdderListener(fieldNum, fieldTitle, fieldSinger, fieldAlbum, mm));
+		
+		JButton cancelButton = new JButton("cancel");
+		cancelButton.addActionListener(new MusicAddCancelListener(f));
+		
 		p.add(labelAlbum);
 		p.add(fieldAlbum);
 		
-		p.add(new JButton("save"));
-		p.add(new JButton("cancel"));
+		p.add(saveButton);
+		p.add(cancelButton);
 		
 		SpringUtilities.makeCompactGrid(p, 5, 2, 6, 6, 6, 6);
 		

@@ -17,7 +17,7 @@ public class WindowFrame extends JFrame
 	{
 		this.mm = mm;
 		this.ms = new MenuSelection(this);
-		this.ma = new MusicAdder(this);
+		this.ma = new MusicAdder(this, this.mm);
 		this.mv = new MusicViewer(this, this.mm);
 		
 		this.setSize(500, 300);

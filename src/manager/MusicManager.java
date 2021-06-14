@@ -22,9 +22,27 @@ public class MusicManager implements Serializable
 	ArrayList<MusicInput> musics = new ArrayList<MusicInput>();
 	transient Scanner input;
 	
+	MusicManager()
+	{
+		
+	}
+	
 	MusicManager(Scanner input)
 	{
 		this.input = input;
+	}
+	
+	public void addMusic(String num, String title, String singer, String album)
+	{
+		MusicInput musicInput = new Ballade(MusicGenre.Ballade);
+		musicInput.getUserInput(input);
+		musics.add(musicInput);
+		musicInput.printInfo();
+	}
+	
+	public void addMusic(MusicInput musicInput)
+	{;
+		musics.add(musicInput);
 	}
 	
     public void addMusic()
